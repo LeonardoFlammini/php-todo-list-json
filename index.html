@@ -13,10 +13,45 @@
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.css' integrity='sha512-r0fo0kMK8myZfuKWk9b6yY8azUnHCPhgNz/uWDl2rtMdWJlk7gmd9socvGZdZzICwAkMgfTkVrplDahQ07Gi0A==' crossorigin='anonymous'/>
   <!-- Custom CSS -->
   <link rel="stylesheet" href="./css/style.css">
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
   <title>PHP ToDo List JSON</title>
 </head>
 <body>
-  
+  <main id="app">
+    <div class="container-lf my-5">
+      <div class="row title">
+        <h1 class="text-center ">ToDo List</h1>
+      </div>
+      <div class="container-fluid">
+        <div class="tasks-container rounded-3 p-5">
+          <ul class="list-group ">
+            <li
+              class="list-group-item d-flex justify-content-between align-items-center"
+              v-for="item in arrayProva"
+            >
+              {{item}}
+              <button class="btn btn-danger">
+                <i class="fa-solid fa-trash"></i>
+              </button>
+            </li> 
+          </ul>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="row new-task rounded-3 p-2 mt-3" >
+          <div class="col">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="New Task...">
+              <button class="btn btn btn-info">Invia</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
 
 
 
