@@ -26,6 +26,24 @@
         <h1 class="text-center ">ToDo List</h1>
       </div>
       <div class="container-fluid">
+        <div class="new-task rounded-3 p-3 my-3" > 
+          <div class="input-group">
+            <input
+              @keyup.enter="addTask"
+              v-model.trim="newTaskModel"
+              type="text"
+              class="form-control"
+              placeholder="New Task...">
+            <button
+              @click="addTask"
+              class="btn btn btn-info"
+            >
+              Invia
+            </button>
+          </div> 
+        </div>
+      </div>
+      <div class="container-fluid">
         <div class="tasks-container rounded-3 p-5">
           <ul class="list-group ">
             <li
@@ -33,21 +51,14 @@
               v-for="(item,index) in list"
             >
               {{item}}
-              <button class="btn btn-danger">
+              <button
+                class="btn btn-danger"
+                @click="removeTask(index)"
+              >
                 <i class="fa-solid fa-trash"></i>
               </button>
             </li> 
           </ul>
-        </div>
-      </div>
-      <div class="container-fluid">
-        <div class="row new-task rounded-3 p-2 mt-3" >
-          <div class="col">
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="New Task...">
-              <button class="btn btn btn-info">Invia</button>
-            </div>
-          </div>
         </div>
       </div>
     </div>

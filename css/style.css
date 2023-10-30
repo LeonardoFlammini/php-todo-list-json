@@ -21,3 +21,9 @@ body{
 .new-task{
   background-color: var(--taskContainer-bgc);
 }
+
+.form-control:focus{
+  border: none;
+  outline: none;
+  box-shadow: none;
+}

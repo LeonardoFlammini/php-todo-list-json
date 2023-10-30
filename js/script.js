@@ -5,6 +5,7 @@ createApp({
     return{
       apiUrl: "./server.php",
       list : [],
+      newTaskModel: '',
 
     }
   },
@@ -15,6 +16,26 @@ createApp({
           this.list = result.data;
           console.log(this.list);
         })
+    },
+    addTask(){
+      const data = new FormData();
+      data.append('newTask' , this.newTaskModel);
+
+      axios.post(this.apiUrl, data)
+        .then(result =>{
+          this.list = result.data;
+        });
+      this.newTaskModel = '';
+    },
+    removeTask(index){
+      const data = new FormData();
+      data.append('indexToDelete', index);
+
+      axios.post(this.apiUrl, data)
+        .then(result =>{
+          this.list = result.data;
+        });
+      
     }
   },
   mounted(){
