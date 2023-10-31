@@ -35,6 +35,7 @@ body{
 
 li {
   cursor: pointer;
+  min-height: 55px;
 }
 
 .is-done{
