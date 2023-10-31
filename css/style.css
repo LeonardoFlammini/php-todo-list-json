@@ -3,10 +3,12 @@
   --body-bgc: #A3D5FF;
   --taskContainer-bgc: #83C9F4;
   --prymary-font-color: #FFFFFF;
+  --done-bgc: #A2C579;
   --primary-font: 'JetBrains Mono', monospace;
 }
 /* BODY */
 body{
+  max-height: 100vh;
   background-color: var(--body-bgc) ;
   font-family: var(--primary-font);
   color: var(--prymary-font-color);
@@ -21,9 +23,22 @@ body{
 .new-task{
   background-color: var(--taskContainer-bgc);
 }
+.input-container{
+  max-width: 880px;
+}
 
 .form-control:focus{
   border: none;
   outline: none;
   box-shadow: none;
+}
+
+li {
+  cursor: pointer;
+}
+
+.is-done{
+  text-decoration: line-through;
+  color: white;
+  background-color: var(--done-bgc);
 }

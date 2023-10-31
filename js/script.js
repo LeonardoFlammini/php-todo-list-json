@@ -36,6 +36,14 @@ createApp({
           this.list = result.data;
         });
       
+    },
+    toggleDone(index){
+      const data = new FormData();
+      data.append('indexToToggle', index);
+      axios.post(this.apiUrl, data)
+        .then(result =>{
+          this.list = result.data;
+        });
     }
   },
   mounted(){
